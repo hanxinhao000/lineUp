@@ -322,14 +322,19 @@ public class XHLineChar extends View {
 
         }
 
+      
+
+
         //画小刻度线
 
-        int iMin = (viewH - 200 - i) / 68;
+        float minLine = i / 4;
+
+       // float iMin = ((((viewH - 200) - i))) / 68.0f ;
         paint.setColor(Color.parseColor("#5535ADA7"));
         for (int j = 0; j < 68 ; j++) {
 
 
-            canvas.drawLine(shuxianIndex,(iMin * j) + 110,shuxianIndex + 30,(iMin * j)+110 ,paint);
+            canvas.drawLine(shuxianIndex,(minLine * j) + 111,shuxianIndex + 30,(minLine * j) + 111 ,paint);
 
         }
 
@@ -552,7 +557,7 @@ public class XHLineChar extends View {
         if (scroller.computeScrollOffset()) {
 
 
-           // Log.e("数据看法", "computeScroll: " + scroller.getCurrX());
+           // Log.e("", "computeScroll: " + scroller.getCurrX());
         }
 
         invalidate();
